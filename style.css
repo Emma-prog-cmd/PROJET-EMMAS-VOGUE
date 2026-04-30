@@ -1,0 +1,379 @@
+/* ===== VARIABLES ===== */
+:root {
+    --chocolat: #4B2C20;
+    --or: #B08D57;
+    --creme: #FFFDF5;
+    --blanc: #ffffff;
+}
+
+/* ===== BASE ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: var(--creme);
+}
+
+/* ===== HEADER ===== */
+.main-header {
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(75, 44, 32, 0.12);
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.img-logo {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* ===== NAVIGATION ===== */
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex: 1;
+}
+
+.nav-links a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--chocolat);
+    font-size: 11px;
+    gap: 4px;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+.nav-links a i { font-size: 18px; }
+.nav-links a:hover { color: var(--or); }
+
+/* ===== BOUTON PANIER ===== */
+.btn-panier-header {
+    background-color: var(--chocolat);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.3s;
+}
+
+.btn-panier-header:hover { background: var(--or); }
+
+.cart-container, .cart-icon, .cart-count, #cart-counter { display: none !important; }
+
+/* ===== HERO ===== */
+.hero-section {
+    padding: 80px 20px;
+    background-color: #fcfcfc;
+    text-align: center;
+}
+
+.hero-subtitle {
+    letter-spacing: 5px;
+    font-size: 13px;
+    color: #8b5a2b;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 6vw, 65px);
+    font-weight: 700;
+    color: #1a1a1a;
+    text-transform: uppercase;
+}
+
+.hero-divider {
+    width: 60px;
+    height: 2px;
+    background-color: #1a1a1a;
+    margin: 25px auto;
+}
+
+.hero-description {
+    font-style: italic;
+    font-size: clamp(14px, 2vw, 18px);
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.btn-contact {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 40px;
+    background-color: #1a1a1a;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    border: 1px solid #1a1a1a;
+    transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+    background-color: transparent;
+    color: #1a1a1a !important;
+}
+
+/* ===== SECTIONS PRODUITS ===== */
+.products { padding: 20px 0 40px; }
+
+.section-title {
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin: 40px 0 20px;
+    color: var(--chocolat);
+}
+
+/* ===== SCROLL HORIZONTAL ===== */
+.scroll-wrapper { position: relative; }
+
+.product-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px 50px 30px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--or) #f0e8d8;
+}
+
+.product-grid::-webkit-scrollbar { height: 6px; }
+.product-grid::-webkit-scrollbar-track { background: #f0e8d8; border-radius: 10px; }
+.product-grid::-webkit-scrollbar-thumb { background: var(--or); border-radius: 10px; }
+
+/* ===== CARTE PRODUIT ===== */
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+    transition: transform 0.3s;
+    flex: 0 0 260px;
+    scroll-snap-align: start;
+}
+
+.card:hover { transform: translateY(-8px); }
+
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.card h3 {
+    font-size: 14px;
+    padding: 12px 12px 6px;
+    color: var(--chocolat);
+    line-height: 1.3;
+}
+
+.price {
+    color: var(--or);
+    font-weight: bold;
+    font-size: 15px;
+    margin: 6px 0 12px;
+}
+
+/* ===== BOUTON AJOUTER ===== */
+.btn-ajouter-panier {
+    background: var(--chocolat);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+    transition: background 0.3s;
+}
+
+.btn-ajouter-panier:hover { background: var(--or); }
+.btn-ajouter-panier:active { transform: scale(0.95); }
+
+/* Flèches scroll */
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--chocolat);
+    color: white;
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 15px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: background 0.3s;
+}
+
+.scroll-btn:hover { background: var(--or); }
+.scroll-btn.left { left: 6px; }
+.scroll-btn.right { right: 6px; }
+
+/* ===== CONTACT ===== */
+.contact { padding: 40px 20px; }
+
+.contact-box {
+    background: white;
+    text-align: center;
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+}
+
+.contact-box h2 { color: var(--chocolat); margin-bottom: 20px; }
+.contact-box p { margin: 10px 0; font-size: 16px; color: #555; }
+
+/* ===== FOOTER ===== */
+footer {
+    background: var(--chocolat);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+}
+
+/* ===== MODAL ===== */
+.modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 380px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content h3 { color: var(--chocolat); margin-bottom: 15px; }
+
+.modal-content input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+.close, .close-panier {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+    font-size: 22px;
+    color: #888;
+}
+
+#liste-panier {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    text-align: left;
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+#liste-panier li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+/* ===== TOAST ===== */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--chocolat);
+    color: white;
+    padding: 14px 22px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: none;
+    z-index: 10000;
+    font-size: 14px;
+    animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* ===== RESPONSIVE MOBILE ===== */
+@media (max-width: 768px) {
+    .main-header { padding: 8px 10px; gap: 6px; }
+    .img-logo { height: 50px; }
+    .nav-links { gap: 14px; }
+    .nav-links a span { display: none; }
+    .nav-links a i { font-size: 20px; }
+    .btn-panier-header { padding: 7px 10px; font-size: 12px; }
+    .card { flex: 0 0 200px; }
+    .card img { height: 220px; }
+    .product-grid { padding: 10px 16px 20px; gap: 14px; }
+    .scroll-btn { display: none; }
+}
+
+@media (max-width: 400px) {
+    .nav-links { gap: 8px; }
+    .card { flex: 0 0 175px; }
+}

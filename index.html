@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emma's Vogue | Luxury Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<!-- MODAL PANIER -->
+<div id="modal-panier" class="modal">
+    <div class="modal-content">
+        <span class="close-panier">&times;</span>
+        <h3>Mon Panier Emma's Vogue</h3>
+        <div id="contenu-panier">
+            <ul id="liste-panier"></ul>
+        </div>
+        <p>Total : <span id="total-panier">0</span> FCFA</p>
+        <button id="btn-finaliser-commande" class="btn-ajouter-panier">Finaliser sur WhatsApp</button>
+    </div>
+</div>
+
+<!-- MODAL COMMANDE -->
+<div id="modal-commande" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Finaliser ma commande</h3>
+        <p id="info-produit">Produit sélectionné</p>
+        <form id="form-client">
+            <input type="text" id="nom-client" placeholder="Votre nom" required>
+            <input type="tel" id="tel-client" placeholder="Votre numéro WhatsApp" required>
+            <button type="submit" class="btn-ajouter-panier">Ajouter au panier</button>
+        </form>
+    </div>
+</div>
+
+<body>
+    <div id="toast-notification" class="toast"></div>
+
+    <!-- HEADER -->
+    <header class="main-header" id="accueil">
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo Emma's Vogue" class="img-logo">
+        </div>
+
+        <nav class="nav-links">
+            <a href="#accueil"><i class="fas fa-home"></i><span>Accueil</span></a>
+            <a href="#robes"><i class="fas fa-tshirt"></i><span>Robes</span></a>
+            <a href="#sacs"><i class="fas fa-shopping-bag"></i><span>Sacs</span></a>
+            <a href="#talons"><i class="fas fa-shoe-prints"></i><span>Talons</span></a>
+            <a href="#bracelets"><i class="fas fa-gem"></i><span>Bracelets</span></a>
+            <a href="#contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
+        </nav>
+
+        <button id="btn-voir-panier" class="btn-panier-header">
+            <i class="fas fa-shopping-bag"></i>
+            <span id="compteur-panier">0</span>
+        </button>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <p class="hero-subtitle">NOUVELLE COLLECTION 2026</p>
+            <h1 class="hero-title">Emma's Vogue</h1>
+            <div class="hero-divider"></div>
+            <p class="hero-description">L'élégance à la portée de chaque femme. Découvrez nos pièces captivantes sélectionnées avec soin à Cotonou.</p>
+            <a href="#contact" class="btn-contact">Nous contacter</a>
+        </div>
+    </section>
+
+    <!-- ROBES -->
+    <section class="products" id="robes">
+        <h2 class="section-title">Nos Robes</h2>
+        <div class="scroll-wrapper">
+            <button class="scroll-btn left" onclick="scrollSection(this, -1)">&#8249;</button>
+            <div class="product-grid">
+                <div class="card">
+                    <img src="images/robe1.jpg" alt="Robe Glamour">
+                    <h3>Robe Glamour</h3>
+                    <p class="price">18 000 FCFA</p>
+                    <button class="btn-ajouter-panier">Ajouter au panier</button>
+                </div>
+                <div class="card">
+                    <img src="images/robe2.jpg" alt="Robe noire courte">
+                    <h3>Robe noire courte</h3>
+                    <p class="price">28 000 FCFA</p>
+                    <button class="btn-ajouter-panier">Ajouter au panier</button>
+                </div>
+                <div class="card">
+                    <img src="images/robe3.jpg" alt="Robe blanche sexy">
+                    <h3>Robe blanche sexy avec traîne au cou</h3>
+                    <p class="price">23 000 FCFA</p>
+                    <button class="btn-ajouter-panier">Ajouter au panier</button>
+                </div>
+                <div class="card">
+                    <img src="images/robe4.jpg" alt="Robe violette">
+                    <h3>Robe violette sexy avec traîne au cou</h3>
+                    <p class="price">32 000 FCFA</p>
+                    <button class="btn-ajouter-panier">Ajouter au panier</button>
+                </div>
+                <div class="card">
+                    <img src="images/robe5.jpg" alt="Robe bleue marine">
+                    <h3>Robe bleue marine avec fente sur le côté</h3>
+                    <p class="price">40 000 FCFA</p>
+                    <button class="btn-ajouter-panier">Ajouter au panier</button>
+                </div>
+                <div class="card">
+                    <img src="images/robe6.jpg" alt="Robe velours rouge">
+                    <h3>Robe velours rouge</h3>
+                    <p class="price">10 000 FCFA</p>
+                    <button class="btn-ajouter-panier">Ajouter au panier</button>
+                </div>
+            </div>
+            <button class="scroll-btn right" onclick="scrollSection(this, 1)">&#8250;</button>
+        </div>
+    </section>
+
+    <!-- SACS -->
+    <section class="products" id="sacs">
+        <h2 class="section-title">Nos Sacs</h2>
+        <div class="scroll-wrapper">
+            <button class="scroll-btn left" onclick="scrollSection(this, -1)">&#8249;</button>
+            <div class="product-grid">
+                <div class="card">
+                    <img src="images/sac1.jpg" alt="Sac noir LV">
+                    <h3>Sac noir Louis-Vuitton</h3>
+                    <p class="price">10 000 FCFA</p>
+                    <button class="btn-ajouter-panier">Ajouter au panier</button>
+                </div>
+                <div class="card">
+                    <img src="images/sac2.jpg" alt="Sac rose Dior">
+                    <h3>Sac rose clair Dior</h3>
+                    <p class="price">15 000 FCFA</p>
+                    <button class="btn-ajouter-panier">Ajouter au panier</button>
+                </div>
+                <div class="card">
+                    <img src="images/sac3.jpg" alt="Sac rouge LV">
+                    <h3>Sac rouge Louis-Vuitton</h3>
+                    <p class="price">20 000 FCFA</p>
+                    <button class="btn-ajouter-panier">Ajouter au panier</button>
+                </div>
+                <div class="card">
+                    <img src="images/sac4.jpg" alt="Sac rose LV">
+                    <h3>Sac rose Louis-Vuitton</h3>
+                    <p class="price">19 000 FCFA</p>
+                    <button class="btn-ajouter-panier">Ajouter au panier</button>
+                </div>
+                <div class="card">
+                    <img src="images/sac5.jpg" alt="Sac marron LV">
+                    <h3>Sac marron avec noeud Louis-Vuitton</h3>
+                    <p class="price">35 000 FCFA</p>
+                    <button class="btn-ajouter-panier">Ajouter au panier</button>
+                </div>
+                <div class="card">
+                    <img src="images/sac6.jpg" alt="Sac beige">
+                    <h3>Sac beige avec noeud</h3>
+                    <p class="price">22 000 FCFA</p>
+                    <button class="btn-ajouter-panier">Ajouter au panier</button>
+                </div>
+            </div>
+            <button class="scroll-btn right" onclick="scrollSection(this, 1)">&#8250;</button>
+        </div>
+    </section>
+
+    <!-- TALONS -->
+    <section class="products" id="talons">
+        <h2 class="section-title">Nos Talons</h2>
+        <div class="scroll-wrapper">
+            <button class="scroll-btn left" onclick="scrollSection(this, -1)">&#8249;</button>
+            <div class="product-grid">
+                <div class="card">
+                    <img src="images/talon1.jpg" alt="Talon en or">
+                    <h3>Talon pointu en or</h3>
+                    <p class="price">18 000 FCFA</p>
+                    <button class="btn-ajouter-panier">Ajouter au panier</button>
+                </div>
+                <div class="card">
+                    <img src="images/talon2.jpg" alt="Talon fleurs">
+                    <h3>Talon pointu avec motif de fleurs</h3>
+                    <p class="price">25 000 FCFA</p>
+                    <button class="btn-ajouter-panier">Ajouter au panier</button>
+                </div>
+                <div class="card">
+                    <img src="images/talon3.jpg" alt="Talon noeud brillant">
+                    <h3>Talon avec noeud brillant</h3>
+                    <p class="price">48 000 FCFA</p>
+                    <button class="btn-ajouter-panier">Ajouter au panier</button>
+                </div>
+                <div class="card">
+                    <img src="images/talon4.jpg" alt="Talon transparent">
+                    <h3>Talon transparent</h3>
+                    <p class="price">55 000 FCFA</p>
+                    <button class="btn-ajouter-panier">Ajouter au panier</button>
+                </div>
+                <div class="card">
+                    <img src="images/talon5.jpg" alt="Talon saumon">
+                    <h3>Talon saumon chic</h3>
+                    <p class="price">25 000 FCFA</p>
+                    <button class="btn-ajouter-panier">Ajouter au panier</button>
+                </div>
+                <div class="card">
+                    <img src="images/talon6.jpg" alt="Talon noir">
+                    <h3>Talon noir élégant</h3>
+                    <p class="price">18 000 FCFA</p>
+                    <button class="btn-ajouter-panier">Ajouter au panier</button>
+                </div>
+            </div>
+            <button class="scroll-btn right" onclick="scrollSection(this, 1)">&#8250;</button>
+        </div>
+    </section>
+
+    <!-- BRACELETS -->
+    <section class="products" id="bracelets">
+        <h2 class="section-title">Nos Bracelets</h2>
+        <div class="scroll-wrapper">
+            <button class="scroll-btn left" onclick="scrollSection(this, -1)">&#8249;</button>
+            <div class="product-grid">
+                <div class="card">
+                    <img src="images/bracelet1.jpg" alt="Bracelet LV">
+                    <h3>Ensemble avec bracelet Louis-Vuitton</h3>
+                    <p class="price">20 000 FCFA</p>
+                    <button class="btn-ajouter-panier">Ajouter au panier</button>
+                </div>
+                <div class="card">
+                    <img src="images/bracelet2.jpg" alt="Ensemble montre">
+                    <h3>Ensemble chic avec montre</h3>
+                    <p class="price">28 000 FCFA</p>
+                    <button class="btn-ajouter-panier">Ajouter au panier</button>
+                </div>
+                <div class="card">
+                    <img src="images/bracelet3.jpg" alt="Ensemble Chanel">
+                    <h3>Ensemble Chanel</h3>
+                    <p class="price">33 000 FCFA</p>
+                    <button class="btn-ajouter-panier">Ajouter au panier</button>
+                </div>
+                <div class="card">
+                    <img src="images/bracelet4.jpg" alt="Bracelet coeur">
+                    <h3>Ensemble bleu avec bracelet en coeur</h3>
+                    <p class="price">32 000 FCFA</p>
+                    <button class="btn-ajouter-panier">Ajouter au panier</button>
+                </div>
+                <div class="card">
+                    <img src="images/bracelet5.jpg" alt="Bracelet infini">
+                    <h3>Ensemble en argent avec bracelet infini</h3>
+                    <p class="price">40 000 FCFA</p>
+                    <button class="btn-ajouter-panier">Ajouter au panier</button>
+                </div>
+                <div class="card">
+                    <img src="images/bracelet6.jpg" alt="Rolex rouge">
+                    <h3>Ensemble Rolex rouge</h3>
+                    <p class="price">10 000 FCFA</p>
+                    <button class="btn-ajouter-panier">Ajouter au panier</button>
+                </div>
+            </div>
+            <button class="scroll-btn right" onclick="scrollSection(this, 1)">&#8250;</button>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="contact-box">
+            <h2>Contactez-nous</h2>
+            <p>📍 Cotonou-Sikecodji</p>
+            <p>📞 +229 01 50 50 96 00</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Emma's Vogue | Design by Emma</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
