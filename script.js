@@ -1,9 +1,3 @@
-// Scroll horizontal par flèches
-function scrollSection(btn, direction) {
-    const grid = btn.closest('.scroll-wrapper').querySelector('.product-grid');
-    grid.scrollBy({ left: direction * 300, behavior: 'smooth' });
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     const modalPanier = document.getElementById('modal-panier');
     const listeUl = document.getElementById('liste-panier');
