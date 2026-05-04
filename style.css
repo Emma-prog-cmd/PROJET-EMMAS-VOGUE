@@ -362,8 +362,8 @@ footer {
 /* ===== RESPONSIVE MOBILE ===== */
 @media (max-width: 768px) {
     .main-header { padding: 8px 10px; gap: 6px; }
-    .img-logo { height: 50px; }
-    .nav-links { gap: 14px; }
+    .img-logo { height: 75px; }
+    .nav-links { display: none; }
     .nav-links a span { display: block; font-size: 9px; }
     .nav-links a i { font-size: 20px; }
     .btn-panier-header { padding: 7px 10px; font-size: 12px; }
