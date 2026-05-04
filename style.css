@@ -421,3 +421,26 @@ footer {
         padding-bottom: 65px;
     }
 }
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.social-icons a {
+    color: var(--chocolat);
+    font-size: 22px;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: var(--or);
+}
+
+@media (max-width: 768px) {
+    .social-icons a {
+        font-size: 20px;
+    }
+}
