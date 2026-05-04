@@ -430,7 +430,7 @@ footer {
 
 .social-icons a {
     color: var(--chocolat);
-    font-size: 22px;
+    font-size: 32px;
     transition: color 0.3s;
     text-decoration: none;
 }
