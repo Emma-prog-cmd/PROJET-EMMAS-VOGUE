@@ -429,7 +429,7 @@ footer {
 }
 
 .social-icons a {
-    color: var(--chocolat);
+    color: var(--chocolat) !important;
     font-size: 32px;
     transition: color 0.3s;
     text-decoration: none;
@@ -440,7 +440,13 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .social-icons a {
-        font-size: 20px;
-    }
+    .social-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-icons a {
+    font-size: 20px;
 }
