@@ -377,3 +377,47 @@ footer {
     .nav-links { gap: 8px; }
     .card { flex: 0 0 175px; }
 }
+
+/* ===== NAVIGATION BAS ===== */
+.bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    border-top: 1px solid rgba(75,44,32,0.15);
+    padding: 8px 0 10px;
+    z-index: 1000;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.08);
+}
+
+.bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--chocolat);
+    font-size: 9px;
+    gap: 3px;
+}
+
+.bottom-nav a i {
+    font-size: 20px;
+}
+
+.bottom-nav a:hover {
+    color: var(--or);
+}
+
+@media (max-width: 768px) {
+    .bottom-nav {
+        display: flex;
+    }
+
+    {
+        padding-bottom: 65px;
+    }
+}
