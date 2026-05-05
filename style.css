@@ -361,16 +361,44 @@ footer {
 
 /* ===== RESPONSIVE MOBILE ===== */
 @media (max-width: 768px) {
-    .main-header { padding: 8px 10px; gap: 6px; }
+    .main-header {
+        padding: 8px 10px;
+        gap: 6px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
     .img-logo { height: 75px; }
     .nav-links { display: none; }
-    .nav-links a span { display: block; font-size: 9px; }
-    .nav-links a i { font-size: 20px; }
-    .btn-panier-header { padding: 7px 10px; font-size: 12px; }
     .card { flex: 0 0 200px; }
     .card img { height: 220px; }
     .product-grid { padding: 10px 16px 20px; gap: 14px; }
     .scroll-btn { display: none; }
+
+    .social-icons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .social-icons a {
+        font-size: 35px !important;
+    }
+
+    .social-icons a i {
+        color: var(--chocolat) !important;
+    }
+
+    .btn-panier-header {
+        padding: 7px 10px;
+        font-size: 12px;
+    }
+
+    .btn-panier-header i {
+        font-size: 18px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -404,54 +432,10 @@ footer {
     gap: 3px;
 }
 
-.bottom-nav a i {
-    font-size: 20px;
-}
-
-.bottom-nav a:hover {
-    color: var(--or);
-}
-
-.main-header {
-    padding: 8px 10px;
-    gap: 6px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.social-icons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 12px;
-}
-
-.social-icons a {
-    font-size: 35px;
-}
-
-.btn-panier-header {
-    padding: 7px 10px;
-    font-size: 12px;
-}
-
-.btn-panier-header i {
-    font-size: 18px;
-}
-
-.social-icons a:hover {
-    color: var(--or);
-}
+.bottom-nav a i { font-size: 20px; }
+.bottom-nav a:hover { color: var(--or); }
 
 @media (max-width: 768px) {
-    .social-icons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-}
-
-.social-icons a {
-    font-size: 20px;
+    .bottom-nav { display: flex; }
+    body { padding-bottom: 65px; }
 }
