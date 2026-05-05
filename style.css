@@ -412,27 +412,23 @@ footer {
     color: var(--or);
 }
 
-@media (max-width: 768px) {
-    .bottom-nav {
-        display: flex;
-    }
-
-    {
-        padding-bottom: 65px;
-    }
+.main-header {
+    padding: 8px 10px;
+    gap: 6px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .social-icons {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
 }
 
 .social-icons a {
-    color: var(--chocolat) !important;
-    font-size: 32px;
-    transition: color 0.3s;
-    text-decoration: none;
+    font-size: 35px;
 }
 
 .social-icons a:hover {
