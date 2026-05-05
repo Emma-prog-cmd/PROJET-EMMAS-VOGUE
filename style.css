@@ -431,6 +431,15 @@ footer {
     font-size: 35px;
 }
 
+.btn-panier-header {
+    padding: 7px 10px;
+    font-size: 12px;
+}
+
+.btn-panier-header i {
+    font-size: 18px;
+}
+
 .social-icons a:hover {
     color: var(--or);
 }
